@@ -21,7 +21,8 @@ public class CoursesController {
     }
 
     @GetMapping(value= "/api/courses/teacher-courses")
-    public List<Course> getTeacherCourses() {
+    public List<Course> getTeacherCourses(@RequestAttribute String userId) {
+        log.debug("getTeacherCourses userId=" + userId);
 //        List<Course> courses = new ArrayList<Course>();
 //        courses.add(new Course(1, "Test course", "teacherId", 100));
 //        return courses;
@@ -29,7 +30,7 @@ public class CoursesController {
     }
 
     @GetMapping(value= "/api/courses/course-students")
-    public List<Student> getCourseStudents(@RequestParam Integer courseId) {
+    public List<Student> getCourseStudents(@RequestParam Integer courseId, @RequestAttribute String userId) {
         List<Student> students = new ArrayList<Student>();
         students.add(new Student(String.valueOf(courseId), "test name"));
         return students;
