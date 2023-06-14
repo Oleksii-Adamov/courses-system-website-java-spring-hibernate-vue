@@ -2,12 +2,10 @@ package ua.lab2.conrollers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-import ua.lab2.enitities.Course;
-import ua.lab2.enitities.Student;
+import ua.lab2.entities.Course;
+import ua.lab2.entities.Student;
 import ua.lab2.services.CourseService;
-import ua.lab2.util.PathUtil;
 
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +30,7 @@ public class CoursesController {
     @GetMapping(value= "/api/courses/course-students")
     public List<Student> getCourseStudents(@RequestParam Integer courseId, @RequestAttribute String userId) {
         List<Student> students = new ArrayList<Student>();
-        students.add(new Student(String.valueOf(courseId), "test name"));
+        //students.add(new Student(String.valueOf(courseId), "test name"));
         return students;
     }
 }

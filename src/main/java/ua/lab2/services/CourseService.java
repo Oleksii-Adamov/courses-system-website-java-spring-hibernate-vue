@@ -1,7 +1,7 @@
 package ua.lab2.services;
 
 import org.springframework.stereotype.Service;
-import ua.lab2.enitities.Course;
+import ua.lab2.entities.Course;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 public class CourseService {
     public List<Course> getTeacherCourses(String teacherUserId) {
         List<Course> courses = new ArrayList<Course>();
-        courses.add(new Course(1, "Test course", "teacherId", 100));
+//        courses.add(new Course(1, "Test course", "teacherId", 100));
         return courses;
     }
 }

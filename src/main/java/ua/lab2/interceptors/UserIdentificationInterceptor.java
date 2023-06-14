@@ -9,6 +9,9 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import ua.lab2.security.JwtValidator;
 
+//import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpServletResponse;
+
 @Slf4j
 public class UserIdentificationInterceptor implements HandlerInterceptor {
 

@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    username: postgres
+    password: root
+    driverClassName: org.postgresql.Driver
+    driverDialect: org.hibernate.dialect.PostgreSQLDialect
+#    url: jdbc:postgresql://localhost/courses_db_keycloak
+    url: jdbc:postgresql://localhost:5432/courses_db_hibernate
+#    url: jdbc:postgresql://localhost:5432/test_db
+  jpa:
+    hibernate:
+#      ddl-auto: validate
+      ddl-auto: update
+#      ddl-auto: create
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 3000
+logging:
+  level:
+    ROOT: ERROR
+    org.springframework.web: ERROR
+    ua.lab2: DEBUG

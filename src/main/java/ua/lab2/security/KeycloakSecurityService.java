@@ -3,7 +3,6 @@ package ua.lab2.security;
 
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
-import org.springframework.boot.configurationprocessor.json.JSONException;
 import ua.lab2.exceptions.KeycloakSecurityServiceException;
 
 import java.io.IOException;

@@ -8,10 +8,10 @@ import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.socket.WebSocketHandler;
-import org.springframework.web.socket.server.HandshakeInterceptor;
 import ua.lab2.security.JwtValidator;
 
+//import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 @Slf4j
 public class ValidateJWTAccessTokenInterceptor implements HandlerInterceptor {
