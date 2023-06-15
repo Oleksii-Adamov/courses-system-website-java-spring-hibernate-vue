@@ -11,14 +11,16 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Table(name = "students_courses")
+@IdClass(StudentCourseId.class)
 public class StudentCourse {
+
     @Id
     @Column(name = "student_user_id", nullable = false)
     private String studentUserId;
 
     @Id
     @Column(name = "course_id", nullable = false)
-    private Integer courseId;
+    private Long courseId;
 
     @Column(name = "grade", nullable = true)
     private Integer grade;

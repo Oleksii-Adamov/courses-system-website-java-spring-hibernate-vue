@@ -21,6 +21,6 @@ public class Teacher {
     @Column(name = "full_name", nullable = false)
     private String fullName;
 
-    @OneToMany(mappedBy="teachers")
+    @OneToMany(mappedBy="teachers", cascade = CascadeType.ALL)
     private List<Course> courses;
 }

@@ -18,18 +18,18 @@ public class Course {
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")
     @Column(name = "id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "name", nullable = false)
     private String name;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="teacher_id", nullable=false)
     private Teacher teacher;
 
     @Column(name = "max_grade", nullable = false)
     private Integer maxGrade;
 
-    @ManyToMany(mappedBy = "courses")
+    @ManyToMany(mappedBy = "courses", cascade = CascadeType.ALL)
     private List<Student> students;
 }
