@@ -76,7 +76,7 @@ public class CoursesController {
         }
     }
 
-    @PostMapping(value= "/api/courses//grade-student")
+    @PostMapping(value= "/api/courses/grade-student")
     public ResponseEntity<?> gradeStudent(@RequestParam Integer courseId, @RequestParam Integer grade,
                                           @RequestParam String teacherResponse, @RequestAttribute String userId) {
         try {

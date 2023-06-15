@@ -17,10 +17,7 @@ import ua.lab2.repositories.StudentCourseRepository;
 import ua.lab2.repositories.StudentRepository;
 import ua.lab2.repositories.TeacherRepository;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CourseService {
