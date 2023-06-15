@@ -2,6 +2,8 @@ package ua.lab2.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ua.lab2.dto.CourseDTO;
+import ua.lab2.dto.StudentDTO;
 import ua.lab2.dto.StudentGradeDTO;
 import ua.lab2.entities.Course;
 import ua.lab2.entities.Student;
@@ -9,6 +11,7 @@ import ua.lab2.entities.StudentCourse;
 import ua.lab2.entities.Teacher;
 import ua.lab2.exceptions.CourseServiceException;
 import ua.lab2.mappers.CourseMapper;
+import ua.lab2.mappers.StudentMapper;
 import ua.lab2.repositories.CourseRepository;
 import ua.lab2.repositories.StudentCourseRepository;
 import ua.lab2.repositories.StudentRepository;
@@ -47,14 +50,14 @@ public class CourseService {
         return courseRepository.save(course).getId();
     }
 
-    public List<Course> getTeacherCourses(String teacherUserId) throws CourseServiceException {
+    public List<CourseDTO> getTeacherCourses(String teacherUserId) throws CourseServiceException {
         Teacher teacher = teacherByUserId(teacherUserId);
-        return teacher.getCourses();
+        return CourseMapper.INSTANCE.map(teacher.getCourses());
     }
 
-    public List<Course> getStudentCourses(String studentUserId) throws CourseServiceException {
+    public List<CourseDTO> getStudentCourses(String studentUserId) throws CourseServiceException {
         Student student = studentByUserId(studentUserId);
-        return student.getCourses();
+        return CourseMapper.INSTANCE.map(student.getCourses());
     }
 
     public void joinCourse(String studentUserId, Integer courseId) throws CourseServiceException {
@@ -63,9 +66,9 @@ public class CourseService {
         student.getCourses().add(course);
     }
 
-    public List<Student> getCourseStudents(Integer courseId) throws CourseServiceException {
+    public List<StudentDTO> getCourseStudents(Integer courseId) throws CourseServiceException {
         Course course = courseById(courseId);
-        return course.getStudents();
+        return StudentMapper.INSTANCE.map(course.getStudents());
     }
 
     public void gradeStudent(Integer courseId, String studentUserId, Integer grade, String teacherResponse) throws CourseServiceException {
